@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
+    <meta charset="utf-8">
+
     <title>Helper Methods Part 3</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -8,9 +11,6 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-
-    <!-- Expand the number of characters we can use in the document beyond basic ASCII 🎉 -->
-    <meta charset="utf-8">
 
     <!-- Make it responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,7 +27,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" >
       <div class="container-fluid">
 
         <%= link_to "Helper Methods 3", root_path, class: "navbar-brand"%>
@@ -51,19 +51,19 @@
       </div>
     </nav>
 
-    <div class="container">
+    <div class="container mt-3">
       <% if notice.present? %>
-        <div class="alert alert-success" role="alert">
+        <div class="alert alert-success" role="alert" >
           <%= notice %>
         </div>
       <% end %>
+
       <% if alert.present?%>
         <div class="alert alert-danger" role="alert">
           <%= alert %>
         </div>
       <% end %>
-
-      <%= yield %>
     </div>
+    <%= yield %>
   </body>
 </html>

@@ -17,6 +17,8 @@ class MoviesController < ApplicationController
     @movie = Movie.find(params.fetch(:id))
   end
 
+  
+
   def create
     movie_params = params.require(:movie).permit(:title, :description)
     
